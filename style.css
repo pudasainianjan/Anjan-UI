@@ -1,0 +1,374 @@
+
+body{ font-size: 1.5em;  margin:0; padding: 0px; outline: none;}
+
+
+    
+.container { margin: 40px; margin-top: 130px;
+      font-family: 'Roboto Condensed', sans-serif;
+    } 
+
+    button{       /*this is kept here because it for only snackbar button ,its actual css is kept in styles*/
+      width: 200px; 
+      background: #eee; 
+      padding: 10px; 
+      margin: 20px auto;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+      display: block;
+    }
+
+    h1{
+      margin:1.5rem 0 auto 2em;
+      margin-right: 30px;
+      text-align: start;
+	    color: #343434;
+	    font-weight: normal;
+	    font-family: 'Ultra', sans-serif;   
+	    font-size: 36px;
+	    line-height: 30px;
+	    text-transform: uppercase;
+	    text-shadow: 0 2px white, 0 3px #777;
+    }
+
+    h2,h3{
+    margin: 1rem -1rem;
+    position: relative;
+    width: min-content;
+    cursor: pointer;
+    }
+
+    h2::after,h3::after{  /*after pseudo element*/
+      content: "";
+      width: 10%;
+      height: 0.3rem;
+      background-color: red;
+      position: absolute;
+      bottom: -0rem;
+      left: 0;
+      opacity: 1;  /*only display now when hover*/
+      transition: all .3s;
+      
+    }
+    h2:hover::after,h3:hover::after{
+      opacity: 1;
+      width: 100%;
+      background-color: black;
+      
+    }
+
+
+
+    .feeds-nav{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 6.5rem;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 0 .7rem rgba(0, 0, 0, .3);
+        z-index: 1;
+    }
+
+
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.search-bar-input{
+    width: 35rem;
+    height: 3rem;
+    border: 0.1rem solid #d6e1e9;
+    border-radius: 3rem;
+    background-color: #d6e1e9;
+    padding-left: 5rem;
+    transition: all .3s;  
+}
+.search-bar-input:focus{
+    background-color: #fff;
+    border-color: #1aa1f5;
+}
+
+.user{
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.user-link{
+    margin: 0 1rem;
+    text-decoration: none;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2.5rem;
+    color: #444;
+    font-weight: bold;
+}
+
+/* SIDEBAR */
+/* sidebar */
+.sidebar-wrapper{
+  position: fixed;
+  background-color: rgba(0, 0, 0, .5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s;
+  z-index: 4;
+}
+
+.sidebar-wrapper-display{
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar{
+  position: absolute;
+  top: 0;
+  right: -30rem;
+  width: 30rem;
+  height: 10vh%;
+  background-color: #fff;
+  padding: 2rem;
+  box-sizing: border-box;  /*because padding increased sidebar size*/
+  box-shadow: -0.1rem 0 .5rem rgba(0, 0, 0, .3);
+  transition: right .5s cubic-bezier(1,0,0,1);
+}
+
+.sidebar-display{
+  right: 0;
+}
+
+.sidebar-header{
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1rem solid #eee;
+}
+.sidebar-header h2{
+  font-size: 2rem;
+}
+.sidebar-header i{
+  margin-left: auto;
+  font-size: 2.5rem;
+  color: red;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+.sidebar-list-1{
+  border-bottom: 0.1rem solid #eee;
+}
+
+.sidebar-list-1 ul{
+  list-style: none;
+  padding: 1.5rem 0;
+}
+
+.sidebar-list-1 li{
+  margin-bottom: 1rem;
+}
+
+.sidebar-list-1 a{
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #868383;
+}
+
+.sidebar-list-1 i{
+  margin-right: 1rem;
+}
+
+.sidebar-list-2 ul{
+  list-style: none;
+  padding: .5rem 0;
+}
+
+.sidebar-list-2 li{
+  margin-bottom: 2.5rem;
+}
+
+.sidebar-list-2 a{
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #868383;
+}
+
+/* dark mode */
+.dark-mode{
+  display: flex;
+  align-items: center;
+}
+.dark-mode p{
+  margin-right: 8rem;
+  font-size: 1.6rem;
+  color: #868383;
+}
+
+.toggle{
+  width: 4.5rem;
+  height: 1.5rem;
+  background-color: #777;
+  border-radius: 3rem;
+  box-shadow: inset 0 .2rem 1rem rgba(0, 0, 0, .3);  /*inset given to create shadow effect inside of the element*/
+  position: relative;
+}
+
+.circle{
+  width: 2rem;
+  height: 2rem;
+  background-color: #ddd;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .3);
+  transition: all .1s linear;
+}
+
+.move{
+  left: 2.5rem;
+  background-color: #117abb;
+}
+
+.dark-1{
+  background-color: #1c2938;
+}
+.dark-2{
+  background-color: #10171e !important;  /*important is given in order to fix the issue of input color background gets white again when focused so to override them*/
+}
+.light{
+  color: #fff;
+}
+
+.border-color{
+  border-color: #444 !important;  /* important given because the border color of post header is not changed*/
+}
+
+/* end of dark mode */
+/* end of sidebar */
+
+.indexModal{
+  width:80%;
+  background-color: #fff;
+  position: relative;
+  border-radius: 1.5rem;
+  display: block;
+}
+
+
+@media(max-width:1000px){
+  .search-bar-input{
+    width: 30rem;
+  }
+
+  .login-modal{
+    width: 80% !important;
+  }
+
+  
+}
+
+
+@media(max-width:780px){
+  .search-bar-input{
+    width: 18rem;
+  }
+
+  .login-modal{
+    width: 80% !important;
+  }
+
+  
+}
+
+.search-bar-mobile{
+  display: none;
+}
+
+
+@media(max-width:682px){
+  .search-bar{
+    display: none;
+  }
+  .search-bar-mobile{
+    /* margin-top: 0rem; */
+    display: block;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.search-bar-input-mobile{
+    width: 100% !important;
+    margin-bottom: 15px;
+    height: 2rem;
+    border: 0.1rem solid #d6e1e9;
+    border-radius: 3rem;
+    background-color: #d6e1e9;
+    padding-left: 5rem;
+    transition: all .3s;  
+}
+.search-bar-input-mobile:focus{
+    background-color: #fff;
+    border-color: #1aa1f5;
+}
+
+  
+
+h1{
+  display: flex;
+  margin-top: 20px;
+  font-size: 23px;
+}
+
+.user{
+  margin-right: 10px;
+  padding-bottom: 5px;
+}
+  
+}
+
+
+@media(max-width:682px){
+
+.sidebar{
+  right: 0px;
+  width: 100vw;
+
+}
+
+.sidebar-list-1 li,
+    .sidebar-list-2 li{
+        margin-bottom: .8rem;
+    }
+
+    .login-modal{
+      width: 80% !important;
+    }
+
+}
+
+
+
+
+@media(max-width:380px){
+  .sidebar-list-1 li,
+    .sidebar-list-2 li{
+        margin-bottom: .5rem;
+        margin-top: .5rem;
+    }
+}
