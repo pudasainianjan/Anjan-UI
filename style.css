@@ -310,7 +310,7 @@ body{ font-size: 1.5em;  margin:0; padding: 0px; outline: none;}
     display: block;
     align-items: center;
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
 }
 .search-bar-input-mobile{
     width: 100% !important;
